@@ -12,13 +12,9 @@ import android.widget.ImageView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    /**
-     * This is comment
-     */
     private final int NU_OF_STREAMS = 5;
     private final int SOURCE_QUALITY = 1;
     private final float LEFT_VOLUME = 1.0f;
-
     private final float RIGHT_VOLUME = 1.0f;
     private final int PRIORITY = 1;
     private final int NO_LOOP = 0;
