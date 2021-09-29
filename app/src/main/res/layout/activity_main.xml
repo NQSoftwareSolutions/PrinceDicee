@@ -1,61 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
     android:background="@drawable/newbackground"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/id_img_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_img_dice_left"
+        app:layout_constraintEnd_toStartOf="@+id/id_gl_right"
+        app:layout_constraintStart_toStartOf="@+id/id_gl_left"
+        app:layout_constraintTop_toTopOf="@+id/id_gl_top"
+        app:srcCompat="@drawable/dicee_logo" />
+
+
+    <ImageView
+        android:id="@+id/id_img_dice_left"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:gravity="center_horizontal">
+        android:contentDescription="@string/logo_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/id_img_dice_right"
+        app:layout_constraintStart_toStartOf="@+id/id_gl_left"
+        app:layout_constraintTop_toTopOf="@+id/id_gl_top"
+        app:srcCompat="@drawable/dice2" />
 
-        <ImageView
-            android:id="@+id/id_img_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/dicee_logo" />
-    </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/id_img_dice_right"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        app:layout_constraintBottom_toBottomOf="@+id/id_img_dice_left"
+        app:layout_constraintEnd_toStartOf="@+id/id_gl_right"
+        app:layout_constraintStart_toEndOf="@+id/id_img_dice_left"
+        app:layout_constraintTop_toTopOf="@+id/id_img_dice_left"
+        app:srcCompat="@drawable/dice1" />
 
-        <ImageView
-            android:id="@+id/id_img_dice_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/dice2" />
+    <Button
+        android:id="@+id/id_btn_roll"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/roll_btn"
+        android:textColor="@color/primary_text"
+        android:textColorHighlight="@color/secondary_text"
+        android:textColorHint="@color/secondary_text"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:backgroundTint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/id_gl_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/id_gl_right"
+        app:layout_constraintStart_toStartOf="@+id/id_gl_left"
+        app:layout_constraintTop_toBottomOf="@+id/id_img_dice_left" />
 
-        <ImageView
-            android:id="@+id/id_img_dice_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/dice1" />
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/id_gl_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/id_gl_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
 
-        <Button
-            android:id="@+id/id_btn_roll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/roll_btn"
-            app:backgroundTint="@color/purple_700" />
-    </RelativeLayout>
-</LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/id_gl_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/id_gl_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
