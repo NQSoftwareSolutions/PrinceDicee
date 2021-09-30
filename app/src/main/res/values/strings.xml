@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Prince Dicee</string>
-    <string name="roll_btn">Roll</string>
     <string name="logo_description">This is the logo</string>
+    <string name="right_dice_cd">This is right dice</string>
+    <string name="left_dice_cd">Left dice image</string>
+    <string name="roll_btn">Roll</string>
 </resources>
